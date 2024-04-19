@@ -15,7 +15,9 @@ methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],}));
 //routes
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/user', userRoutes);
-
+app.get('/',(req,res)=>{
+    res.send('Welcome to the workout tracker app');
+});
 
 //connect to mongodb
 mongoose.connect(process.env.MONGO_URI)
